@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assistant Chatbot</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero__content">
+          <h1>Agentic Chatbot</h1>
+          <p class="hero__tagline">
+            A conversational assistant ready to answer questions, brainstorm ideas,
+            and keep your projects moving.
+          </p>
+        </div>
+        <div class="hero__status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">Online</span>
+        </div>
+      </header>
+
+      <main class="chat-shell" aria-live="polite">
+        <section id="messages" class="chat-log" aria-label="Conversation history">
+          <div class="message message--bot">
+            <div class="message__avatar" aria-hidden="true">🤖</div>
+            <div class="message__body">
+              <div class="message__meta">
+                <span class="message__author">Bot</span>
+                <time class="message__time">Just now</time>
+              </div>
+              <p class="message__text">
+                Hi there! I'm your AI teammate. Ask me about planning, creative ideas,
+                or anything you're curious about.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <form id="chat-form" class="composer" autocomplete="off">
+          <label class="sr-only" for="chat-input">Message the assistant</label>
+          <textarea
+            id="chat-input"
+            name="message"
+            rows="1"
+            placeholder="Ask me anything..."
+            required
+            minlength="1"
+          ></textarea>
+          <div class="composer__actions">
+            <button type="button" id="clear-btn" class="btn btn--ghost">
+              Clear
+            </button>
+            <button type="submit" class="btn">
+              <span class="btn__icon" aria-hidden="true">➤</span>
+              Send
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <template id="message-template">
+      <div class="message">
+        <div class="message__avatar" aria-hidden="true"></div>
+        <div class="message__body">
+          <div class="message__meta">
+            <span class="message__author"></span>
+            <time class="message__time"></time>
+          </div>
+          <p class="message__text"></p>
+        </div>
+      </div>
+    </template>
+
+    <script src="assets/script.js" type="module"></script>
+  </body>
+</html>
